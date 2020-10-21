@@ -1,1 +1,1 @@
-Given 3 Floats find the maximum
+Given 3 Strings find the maximum

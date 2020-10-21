@@ -54,5 +54,25 @@ namespace FindMaximumMSTest
             //// Assert
             Assert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// Tests the maximum among strings.
+        /// </summary>
+        /// <param name="firstString">The first string.</param>
+        /// <param name="secondString">The second string.</param>
+        /// <param name="thirdString">The third string.</param>
+        /// <param name="expected">The expected.</param>
+        [TestMethod]
+        [DataRow("Apple", "Peach", "Banana", "Peach")]
+        [DataRow("Peach", "Banana", "Apple", "Peach")]
+        [DataRow("Banana", "Apple", "Peach", "Peach")]
+        public void TestMaxAmongStrings(string firstString, string secondString, string thirdString, string expected)
+        {
+            //// Arrange
+            //// Act
+            string actual = Program.MaxAmongStrings(firstString, secondString, thirdString);
+            //// Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
