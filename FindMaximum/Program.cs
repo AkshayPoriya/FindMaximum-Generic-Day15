@@ -21,6 +21,7 @@ namespace FindMaximum
         {
             Console.WriteLine("Max among 5, 10 and 15 is: " + MaxAmongIntegers(5, 10, 15));
             Console.WriteLine("Max among 5.1, 10.1 and 15.1 is: " + MaxAmongDoubles(5.1, 10.1, 15.1));
+            Console.WriteLine("Max among Apple, Peach and Banana is: " + MaxAmongStrings("Apple", "Peach", "Banana"));
         }
 
         /// <summary>
@@ -91,6 +92,41 @@ namespace FindMaximum
             }
 
             return firstValue;
+        }
+
+        /// <summary>
+        /// Maximums the among strings.
+        /// </summary>
+        /// <param name="firstString">The first string.</param>
+        /// <param name="secondString">The second string.</param>
+        /// <param name="thirdString">The third string.</param>
+        /// <returns>
+        /// return string
+        /// </returns>
+        public static string MaxAmongStrings(string firstString, string secondString, string thirdString)
+        {
+            if ((firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) > 0) ||
+                (firstString.CompareTo(secondString) >= 0 && firstString.CompareTo(thirdString) > 0) ||
+                (firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) >= 0))
+            {
+                return firstString;
+            }
+
+            if ((secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) > 0) ||
+                (secondString.CompareTo(firstString) >= 0 && secondString.CompareTo(thirdString) > 0) ||
+                (secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) >= 0))
+            {
+                return secondString;
+            }
+
+            if ((thirdString.CompareTo(secondString) > 0 && thirdString.CompareTo(firstString) > 0) ||
+                (thirdString.CompareTo(secondString) >= 0 && thirdString.CompareTo(firstString) > 0) ||
+                (thirdString.CompareTo(secondString) > 0 && thirdString.CompareTo(firstString) >= 0))
+            {
+                return thirdString;
+            }
+
+            return firstString;
         }
     }
 }
