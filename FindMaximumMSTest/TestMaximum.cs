@@ -34,5 +34,25 @@ namespace FindMaximumMSTest
             //// Assert
             Assert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// Tests the maximum among Doubles.
+        /// </summary>
+        /// <param name="firstValue">The first value.</param>
+        /// <param name="secondValue">The second value.</param>
+        /// <param name="thirdValue">The third value.</param>
+        /// <param name="expected">The expected.</param>
+        [TestMethod]
+        [DataRow(10.2, -5.1, 7.1, 10.2)]
+        [DataRow(-5.1, 10.2, 7.1, 10.2)]
+        [DataRow(7.1, -5.1, 10.2, 10.2)]
+        public void TestMaxAmongDoubles(double firstValue, double secondValue, double thirdValue, double expected)
+        {
+            //// Arrange
+            //// Act
+            double actual = Program.MaxAmongDoubles(firstValue, secondValue, thirdValue);
+            //// Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
