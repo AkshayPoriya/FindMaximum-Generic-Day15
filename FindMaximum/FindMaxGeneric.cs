@@ -24,6 +24,20 @@ namespace FindMaximum
         private T firstValue, secondValue, thirdValue;
 
         /// <summary>
+        /// Array of Generic type
+        /// </summary>
+        private T[] values;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FindMaxGeneric{T}"/> class.
+        /// </summary>
+        /// <param name="values">The values.</param>
+        public FindMaxGeneric(T[] values)
+        {
+            this.values = values;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="FindMaxGeneric{T}"/> class.
         /// </summary>
         /// <param name="firstValue">The first value.</param>
@@ -45,7 +59,7 @@ namespace FindMaximum
         /// <returns>
         /// return Generic type
         /// </returns>
-        public static T MaxValue(T firstValue, T secondValue, T thirdValue)
+        public static T MaxValue(T firstValue , T secondValue, T thirdValue)
         {
             if ((firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0) ||
                 (firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0) ||
@@ -80,6 +94,29 @@ namespace FindMaximum
         public T FindMax()
         {
             return MaxValue(this.firstValue, this.secondValue, this.thirdValue);
+        }
+
+        /// <summary>
+        /// Sorts the specified values.
+        /// </summary>
+        /// <param name="values">The values.</param>
+        /// <returns></returns>
+        public T[] Sort(T[] values)
+        {
+            Array.Sort(values);
+            return values;
+        }
+
+        /// <summary>
+        /// Determines the maximum of the parameters.
+        /// </summary>
+        /// <param name="values">The values.</param>
+        /// <returns></returns>
+        public T MaxFromArray(T[] values)
+        {
+            //// [^1] means first element from end
+            //// End index start with 1, keep this in mind
+            return Sort(values)[^1];
         }
     }
 }

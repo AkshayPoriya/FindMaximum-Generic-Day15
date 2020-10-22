@@ -1,1 +1,1 @@
-Given 3 Strings find the maximum
+Extend the max method to take more then three parameters
