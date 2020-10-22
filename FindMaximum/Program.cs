@@ -22,6 +22,8 @@ namespace FindMaximum
             Console.WriteLine("Max among 5, 10 and 15 is: " + MaxAmongDataType<int>(5, 10, 15));
             Console.WriteLine("Max among 5.1, 10.1 and 15.1 is: " + MaxAmongDataType<double>(5.1, 10.1, 15.1));
             Console.WriteLine("Max among Apple, Peach and Banana is: " + MaxAmongDataType<string>("Apple", "Peach", "Banana"));
+            FindMaxGeneric<string> findMaxGeneric = new FindMaxGeneric<string>(new string[] { "Apple", "Peach", "Banana" });
+            findMaxGeneric.PrintMax();
         }
 
         /// <summary>
