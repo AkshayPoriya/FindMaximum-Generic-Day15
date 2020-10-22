@@ -29,8 +29,9 @@ namespace FindMaximumMSTest
         public void TestMaxAmongIntegers(int firstValue, int secondValue, int thirdValue, int expected)
         {
             //// Arrange
+            FindMaxGeneric<int> findMaxGeneric = new FindMaxGeneric<int>(firstValue, secondValue, thirdValue);
             //// Act
-            int actual = Program.MaxAmongIntegers(firstValue, secondValue, thirdValue);
+            int actual = findMaxGeneric.FindMax();
             //// Assert
             Assert.AreEqual(expected, actual);
         }
@@ -49,8 +50,9 @@ namespace FindMaximumMSTest
         public void TestMaxAmongDoubles(double firstValue, double secondValue, double thirdValue, double expected)
         {
             //// Arrange
+            FindMaxGeneric<double> findMaxGeneric = new FindMaxGeneric<double>(firstValue, secondValue, thirdValue);
             //// Act
-            double actual = Program.MaxAmongDoubles(firstValue, secondValue, thirdValue);
+            double actual = findMaxGeneric.FindMax();
             //// Assert
             Assert.AreEqual(expected, actual);
         }
@@ -69,8 +71,9 @@ namespace FindMaximumMSTest
         public void TestMaxAmongStrings(string firstString, string secondString, string thirdString, string expected)
         {
             //// Arrange
+            FindMaxGeneric<string> findMaxGeneric = new FindMaxGeneric<string>(firstString, secondString, thirdString);
             //// Act
-            string actual = Program.MaxAmongStrings(firstString, secondString, thirdString);
+            string actual = findMaxGeneric.FindMax();
             //// Assert
             Assert.AreEqual(expected, actual);
         }
