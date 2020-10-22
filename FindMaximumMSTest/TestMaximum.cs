@@ -16,43 +16,39 @@ namespace FindMaximumMSTest
     public class TestMaximum
     {
         /// <summary>
-        /// Tests the MaxAmongIntegers Function of Program Class.
+        /// Tests the maximum among integers.
         /// </summary>
-        /// <param name="firstValue">The first value.</param>
-        /// <param name="secondValue">The second value.</param>
-        /// <param name="thirdValue">The third value.</param>
+        /// <param name="values">The values.</param>
         /// <param name="expected">The expected.</param>
         [TestMethod]
-        [DataRow(10, -5, 7, 10)]
-        [DataRow(-5, 10, 7, 10)]
-        [DataRow(7, -5, 10, 10)]
-        public void TestMaxAmongIntegers(int firstValue, int secondValue, int thirdValue, int expected)
+        [DataRow(new int[] {10, -5, 7}, 10)]
+        [DataRow(new int[] { -5, 10, 7 }, 10)]
+        [DataRow(new int[] { 7, -5, 10 }, 10)]
+        public void TestMaxAmongIntegers(int[] values, int expected)
         {
             //// Arrange
-            FindMaxGeneric<int> findMaxGeneric = new FindMaxGeneric<int>(firstValue, secondValue, thirdValue);
+            FindMaxGeneric<int> findMaxGeneric = new FindMaxGeneric<int>(values);
             //// Act
-            int actual = findMaxGeneric.FindMax();
+            int actual = findMaxGeneric.MaxFromArray(values);
             //// Assert
             Assert.AreEqual(expected, actual);
         }
 
         /// <summary>
-        /// Tests the maximum among Doubles.
+        /// Tests the maximum among doubles.
         /// </summary>
-        /// <param name="firstValue">The first value.</param>
-        /// <param name="secondValue">The second value.</param>
-        /// <param name="thirdValue">The third value.</param>
+        /// <param name="values">The values.</param>
         /// <param name="expected">The expected.</param>
         [TestMethod]
-        [DataRow(10.2, -5.1, 7.1, 10.2)]
-        [DataRow(-5.1, 10.2, 7.1, 10.2)]
-        [DataRow(7.1, -5.1, 10.2, 10.2)]
-        public void TestMaxAmongDoubles(double firstValue, double secondValue, double thirdValue, double expected)
+        [DataRow(new double[] { 10.2, -5.1, 7.1 }, 10.2)]
+        [DataRow(new double[] { -5.1, 10.2, 7.1 }, 10.2)]
+        [DataRow(new double[] { 7.1, -5.1, 10.2 }, 10.2)]
+        public void TestMaxAmongDoubles(double[] values, double expected)
         {
             //// Arrange
-            FindMaxGeneric<double> findMaxGeneric = new FindMaxGeneric<double>(firstValue, secondValue, thirdValue);
+            FindMaxGeneric<double> findMaxGeneric = new FindMaxGeneric<double>(values);
             //// Act
-            double actual = findMaxGeneric.FindMax();
+            double actual = findMaxGeneric.MaxFromArray(values);
             //// Assert
             Assert.AreEqual(expected, actual);
         }
@@ -60,20 +56,18 @@ namespace FindMaximumMSTest
         /// <summary>
         /// Tests the maximum among strings.
         /// </summary>
-        /// <param name="firstString">The first string.</param>
-        /// <param name="secondString">The second string.</param>
-        /// <param name="thirdString">The third string.</param>
+        /// <param name="values">The values.</param>
         /// <param name="expected">The expected.</param>
         [TestMethod]
-        [DataRow("Apple", "Peach", "Banana", "Peach")]
-        [DataRow("Peach", "Banana", "Apple", "Peach")]
-        [DataRow("Banana", "Apple", "Peach", "Peach")]
-        public void TestMaxAmongStrings(string firstString, string secondString, string thirdString, string expected)
+        [DataRow(new string[] { "Apple", "Peach", "Banana" }, "Peach")]
+        [DataRow(new string[] { "Peach", "Banana", "Apple" }, "Peach")]
+        [DataRow(new string[] { "Banana", "Apple", "Peach" }, "Peach")]
+        public void TestMaxAmongStrings(string[] values, string expected)
         {
             //// Arrange
-            FindMaxGeneric<string> findMaxGeneric = new FindMaxGeneric<string>(firstString, secondString, thirdString);
+            FindMaxGeneric<string> findMaxGeneric = new FindMaxGeneric<string>(values);
             //// Act
-            string actual = findMaxGeneric.FindMax();
+            string actual = findMaxGeneric.MaxFromArray(values);
             //// Assert
             Assert.AreEqual(expected, actual);
         }
