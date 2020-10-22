@@ -30,7 +30,7 @@ namespace FindMaximumMSTest
         {
             //// Arrange
             //// Act
-            int actual = Program.MaxAmongIntegers(firstValue, secondValue, thirdValue);
+            int actual = Program.MaxAmongDataType<int>(firstValue, secondValue, thirdValue);
             //// Assert
             Assert.AreEqual(expected, actual);
         }
@@ -50,7 +50,7 @@ namespace FindMaximumMSTest
         {
             //// Arrange
             //// Act
-            double actual = Program.MaxAmongDoubles(firstValue, secondValue, thirdValue);
+            double actual = Program.MaxAmongDataType<double>(firstValue, secondValue, thirdValue);
             //// Assert
             Assert.AreEqual(expected, actual);
         }
@@ -70,7 +70,7 @@ namespace FindMaximumMSTest
         {
             //// Arrange
             //// Act
-            string actual = Program.MaxAmongStrings(firstString, secondString, thirdString);
+            string actual = Program.MaxAmongDataType<string>(firstString, secondString, thirdString);
             //// Assert
             Assert.AreEqual(expected, actual);
         }
