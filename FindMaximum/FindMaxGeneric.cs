@@ -118,5 +118,10 @@ namespace FindMaximum
             //// End index start with 1, keep this in mind
             return Sort(values)[^1];
         }
+
+        public void PrintMax()
+        {
+            Console.WriteLine("Max value is: " + MaxFromArray(values));
+        }
     }
 }
